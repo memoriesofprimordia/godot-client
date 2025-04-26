@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7i4tb3fcc0ug"]
+
+[ext_resource type="Script" uid="uid://bxd15lkofyubo" path="res://scripts/scenes/location-hud/grid-renderer.gd" id="1_pkcdy"]
+[ext_resource type="Script" uid="uid://c2hejchet4bmf" path="res://scripts/scenes/location-hud/hovered_cells.gd" id="2_m7eoh"]
+
+[node name="LocationHud" type="CanvasLayer"]
+
+[node name="GridRenderer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pkcdy")
+
+[node name="HoveredCells" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_m7eoh")

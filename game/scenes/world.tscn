@@ -1,38 +1,15 @@
-[gd_scene load_steps=5 format=4 uid="uid://bpv257lria6yu"]
+[gd_scene load_steps=4 format=3 uid="uid://bpv257lria6yu"]
 
-[ext_resource type="Texture2D" uid="uid://cgfnnj5krvxoi" path="res://assets-references/tile.png" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://cvdhkn0f276gb" path="res://scenes/floor.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cigyb7tofge6y" path="res://scenes/player.tscn" id="2_rwgxs"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
-texture = ExtResource("1_f3sb7")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_gv5m4"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_fj7yv")
+[ext_resource type="PackedScene" uid="uid://b7i4tb3fcc0ug" path="res://scenes/location-hud.tscn" id="3_4wyf3"]
 
 [node name="World" type="Node2D"]
 
-[node name="Floor" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAA=")
-tile_set = SubResource("TileSet_gv5m4")
+[node name="Floor" parent="." instance=ExtResource("1_rwgxs")]
 
 [node name="Player" parent="." instance=ExtResource("2_rwgxs")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LocationHud" parent="." instance=ExtResource("3_4wyf3")]
